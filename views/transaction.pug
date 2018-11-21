@@ -1,0 +1,172 @@
+extends include/layout
+
+block content
+  .panel
+    p.panel-heading.is-trtl-green
+      i.fas.fa-dice-d6
+      |   Block: 
+      span#blockHeaderHash  
+    .panel-block
+      table.table.is-striped.is-fullwidth
+        tbody
+          tr
+            th(width='2%')
+              i.fas.fa-bars
+            th(width='10%') Height
+            td#blockHeight.has-text-left(width='37%')
+            th(width='2%')
+              i.fas.fa-weight-hanging
+            th(width='12%') Size
+            td#blockSize.has-text-left(width='37%')
+          tr
+          tr
+            th
+              i.fas.fa-check-double
+            th Confirmations
+            td#blockDepth.has-text-left
+            th
+              i.fas.fa-trophy
+            th Base Reward
+            td#blockBaseReward.has-text-left
+          tr
+            th
+              i.fas.fa-clock
+            th Date & Time
+            td#blockTimestamp.has-text-left
+            th
+              i.fas.fa-award
+            th Reward
+            td#blockReward.has-text-left
+          tr
+            th
+              i.fas.fa-code-branch
+            th.panel(<div='')
+              p.panel-heading.is-trtl-green
+                i.fas.fa-dice-d6
+                |   Transaction: 
+                span#transactionHeaderHash  
+              .panel-block
+                table.table.is-striped.is-fullwidth
+                  tbody
+                    tr
+                      th(width='2%')
+                        i.fas.fa-clock
+                      th(width='10%') Date & Time
+                      td#transactionTimestamp.has-text-left(width='37%')
+                      th(width='2%')
+                        i.fas.fa-exchange-alt
+                      th(width='12%') Fee
+                      td#transactionFee.has-text-left(width='37%')
+                    tr
+                    tr
+                      th
+                        i.fas.fa-check-double
+                      th Confirmations
+                      td#transactionConfirmations.has-text-left
+                      th
+                        i.fas.fa-weight-hanging
+                      th Size
+                      td#transactionSize.has-text-left
+                    tr
+                      th
+                        i.fas.fa-life-ring
+                      th Ring Size
+                      td#transactionRingSize.has-text-left
+                      th
+                        i.fas.fa-trophy
+                      th Total Amount
+                      td#transactionAmount.has-text-left
+                    tr
+                      th
+                        i.fas.fa-unlock
+                      th Unlock Time
+                      td#transactionUnlockTime.has-text-left
+                      th
+                        i.fas.fa-hashtag
+                      th Block Hash
+                      td#blockHash.has-text-left
+                    tr
+                      th
+                        i.fas.fa-id-card
+                      th Payment ID
+                      td#transactionPaymentId.has-text-left
+                      th
+                        i.fas.fa-random
+                      th Nonce
+                      td#transactionNonce.has-text-left
+                    tr
+                      th
+                        i.fa.fa-key
+                      th Public Key
+                      td#transactionPublicKey.has-text-left(colspan='4')
+              .panel
+                p.panel-heading.is-trtl-green
+                  i.fas.fa-sign-in-alt
+                  span#inputCount.badge.is-badge-small(data-badge='0') Inputs
+                .panel-block
+                  table#inputs.table.table-striped.table-bordered.is-fullwidth
+                    thead
+                      tr
+                        th(width='25%')
+                          i.fas.fa-money-bill-wave-alt
+                          |   Amount
+                        th(width='65%')
+                          i.fas.fa-fingerprint
+                          |   Key Image
+                        th(width='10%')
+                          i.fas.fa-layer-group
+                          |   Type
+              .panel
+                p.panel-heading.is-trtl-green
+                  i.fas.fa-sign-out-alt
+                  span#outputCount.badge.is-badge-small(data-badge='0') Outputs
+                .panel-block
+                  table#outputs.table.table-striped.table-bordered.is-fullwidth
+                    thead
+                      tr
+                        th(width='25%')
+                          i.fas.fa-money-bill-wave-alt
+                          |   Amount
+                        th(width='65%')
+                          i.fas.fa-key
+                          |   Key
+                        th(width='10%')
+                          i.fas.fa-layer-group
+                          |   Type
+              | >Version
+            td#blockVersion.has-text-left
+            th
+              i.fas.fa-weight-hanging
+            th Transactions Size
+            td#blockTransactionSize.has-text-left
+          tr
+            th
+              i.fas.fa-lock
+            th Difficulty
+            td#blockDifficulty.has-text-left
+            th
+              i.fas.fa-exchange-alt
+            th Transaction Fees
+            td#blockTransactionFees.has-text-left
+  .panel
+    p.panel-heading.is-trtl-green
+      i.fas.fa-exchange-alt
+      span#transactionCount.badge.is-badge-small(data-badge='0') Transactions
+    .panel-block
+      table#transactions.table.table-striped.table-bordered.is-fullwidth
+        thead
+          tr
+            th(width='60%')
+              i.fas.fa-hashtag
+              |   Hash
+            th(width='10%')
+              i.fas.fa-exchange-alt
+              |   Fee
+            th(width='20%')
+              i.fas.fa-money-bill-wave-alt
+              |   Total Amount
+            th(width='10%')
+              i.fas.fa-weight-hanging
+              |   Size
+
+  script(src='/js/transaction.js')

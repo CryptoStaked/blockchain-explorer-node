@@ -32,7 +32,7 @@ $(document).ready(function () {
           targets: 0,
           render: function (data, type, row, meta) {
             if (type === 'display') {
-              data = '<a href="/transaction.html?hash=' + data + '">' + data + '</a>'
+              data = '<a href="/transaction?hash=' + data + '">' + data + '</a>'
             }
             return data
           }

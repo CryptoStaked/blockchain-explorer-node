@@ -1,0 +1,31 @@
+nav.navbar.is-fixed-top(role='navigation', aria-label='main navigation')
+    .container
+
+        .navbar-brand
+            a.navbar-item(href='https://turtlecoin.lol')
+                img(src='/img/turtlecoin_wordmark_color.png', height='100')
+        a.navbar-burger.burger(role='button', aria-label='menu', aria-expanded='false', data-target='siteNavBar')
+            span(aria-hidden='true')
+            span(aria-hidden='true')
+            span(aria-hidden='true')
+        #siteNavBar.navbar-menu
+            .navbar-start
+                a.navbar-item(href='/')
+                    i.fas.fa-dice-d6
+                    |   Block Explorer
+                a.navbar-item(href='/transaction/check')
+                    i.fas.fa-exchange-alt
+                    |   Check Transaction
+                a.navbar-item(href='/pools')
+                    i.fas.fa-users
+                    |   Pools
+        .navbar-end
+            .navbar-item
+                .field.has-addons
+                    .control.has-icons-left
+                        input#searchValue.input.is-fullwidth.is-medium(type='text', placeholder='Height/Hash/Payment ID', maxlength='64')
+                        span.icon.is-medium.is-left
+                            i.fas.fa-search
+                    .control
+                        a#searchButton.button.is-info.is-trtl-green.is-medium
+                            | Search

@@ -1,0 +1,79 @@
+extends include/layout
+
+block content
+  .panel
+    p.panel-heading.is-trtl-green
+      i.fas.fa-dice-d6
+      |   Block: 
+      span#blockHeaderHash  
+    .panel-block
+      table.table.is-striped.is-fullwidth
+        tbody
+          tr
+            th(width='2%')
+              i.fas.fa-bars
+            th(width='10%') Height
+            td#blockHeight.has-text-left(width='37%')
+            th(width='2%')
+              i.fas.fa-weight-hanging
+            th(width='12%') Size
+            td#blockSize.has-text-left(width='37%')
+          tr
+          tr
+            th
+              i.fas.fa-check-double
+            th Confirmations
+            td#blockDepth.has-text-left
+            th
+              i.fas.fa-trophy
+            th Base Reward
+            td#blockBaseReward.has-text-left
+          tr
+            th
+              i.fas.fa-clock
+            th Date & Time
+            td#blockTimestamp.has-text-left
+            th
+              i.fas.fa-award
+            th Reward
+            td#blockReward.has-text-left
+          tr
+            th
+              i.fas.fa-code-branch
+            th Version
+            td#blockVersion.has-text-left
+            th
+              i.fas.fa-weight-hanging
+            th Transactions Size
+            td#blockTransactionSize.has-text-left
+          tr
+            th
+              i.fas.fa-lock
+            th Difficulty
+            td#blockDifficulty.has-text-left
+            th
+              i.fas.fa-exchange-alt
+            th Transaction Fees
+            td#blockTransactionFees.has-text-left
+  .panel
+    p.panel-heading.is-trtl-green
+      i.fas.fa-exchange-alt
+      span#transactionCount.badge.is-badge-small(data-badge='0') Transactions
+    .panel-block
+      table#transactions.table.table-striped.table-bordered.is-fullwidth
+        thead
+          tr
+            th(width='60%')
+              i.fas.fa-hashtag
+              |   Hash
+            th(width='10%')
+              i.fas.fa-exchange-alt
+              |   Fee
+            th(width='20%')
+              i.fas.fa-money-bill-wave-alt
+              |   Total Amount
+            th(width='10%')
+              i.fas.fa-weight-hanging
+              |   Size
+
+  script(src='/js/block.js')

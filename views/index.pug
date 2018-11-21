@@ -1,0 +1,109 @@
+extends include/layout
+
+block content
+  .columns
+    .column.panel
+      p.panel-heading.is-trtl-green
+        i.fas.fa-server
+        |   Network Stats
+      .panel-block.same-height
+        table.table.is-striped.is-fullwidth.chart
+          tbody
+            tr
+              th
+                i.fas.fa-bars
+                |   Height
+              td#blockchainHeight.has-text-right
+            tr
+              th
+                i.fas.fa-lock
+                |   Difficulty
+              td#blockchainDifficulty.has-text-right
+            tr
+              th
+                i.fas.fa-tachometer-alt
+                |   Network Hash Rate
+              td#blockchainHashRate.has-text-right
+            tr
+              th
+                i.fas.fa-award
+                |   Block Reward
+              td#blockchainReward.has-text-right
+            tr
+              th
+                i.fas.fa-exchange-alt
+                |   Total Transactions
+              td#blockchainTransactions.has-text-right
+            tr
+              th
+                i.fas.fa-circle-notch
+                |   Circulating Supply
+              td#blockchainCirculatingSupply.has-text-right
+            tr
+              th
+                i.fas.fa-suitcase-rolling
+                |   Total Supply
+              td#blockchainTotalSupply.has-text-right
+            tr
+              th
+                i.fas.fa-chart-pie
+                |   Current Emission
+              td#blockchainSupplyEmission.has-text-right
+    .column.panel
+      p.panel-heading.is-trtl-green
+        i.fas.fa-chart-bar
+        |   Network Chart
+      .panel-block.same-height
+        #blockchainChart.chart  
+  .container
+    .columns
+      .column.panel
+        p.panel-heading.is-trtl-green
+          i.fas.fa-exchange-alt
+          span#transactionPoolCount.badge.is-badge-small(data-badge='0') Transaction Pool
+        .panel-block
+          table#transactionPool.table.table-striped.table-bordered.responsive
+            thead
+              tr
+                th(data-priority='1', width='20%')
+                  i.fas.fa-money-bill-wave-alt
+                  |   Amount
+                th(data-priority='1', width='20%')
+                  i.fas.fa-exchange-alt
+                  |   Fee
+                th(data-priority='1', width='20%')
+                  i.fas.fa-weight-hanging
+                  |   Size
+                th(width='40%')
+                  i.fas.fa-hashtag
+                  |   Hash
+  .container
+    .columns
+      .column.panel
+        p.panel-heading.is-trtl-green
+          i.fas.fa-link
+          |   Recent Blocks
+        .panel-block
+          table#recentBlocks.table.table-striped.table-bordered.responsive
+            thead
+              tr
+                th(data-priority='1', width='10%')
+                  i.fas.fa-bars
+                  |   Height
+                th(data-priority='1', width='15%')
+                  i.fas.fa-weight-hanging
+                  |   Size
+                th(data-priority='10', width='30%')
+                  i.fas.fa-hashtag
+                  |   Block Hash
+                th(data-priority='10', width='15%')
+                  i.fas.fa-lock
+                  |   Difficulty
+                th(data-priority='2', width='10%')
+                  i.fas.fa-file-signature
+                  |   Txns
+                th(data-priority='1', width='20%')
+                  i.far.fa-clock
+                  |   Date & Time
+
+  script(src='/js/main.js')
